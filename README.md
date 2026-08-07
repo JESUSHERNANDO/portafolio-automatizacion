@@ -20,46 +20,41 @@ PLC Siemens, HMI y programación bajo IEC 61131-3.
 ---
 
 ## Proyectos
+# Sistema de envasado automatizado
 
-### 1. [Sistema de envasado automatizado](./01-envasado)
+## Descripción del proceso
+[Qué hace la máquina, en tres o cuatro líneas]
 
-Control de una línea de llenado con secuencia automática, modo manual,
-gestión de alarmas y HMI de operación con sinóptico animado.
+## Alcance implementado
+- Secuencia automática de llenado, tapado y evacuación
+- Modo manual para mantenimiento con enclavamientos
+- Gestión de alarmas con reconocimiento
+- HMI de operación con sinóptico animado
 
-**Stack:** S7-1200 · TIA Portal V20 · WinCC Basic · PLCSIM
-
-[▶ Ver video](enlace-youtube) · [Documentación completa](./01-envasado/README.md)
-
-![Vista del HMI](./01-envasado/media/hmi.png)# Portafolio de Automatización Industrial
-
-Estudiante de Ingeniería Electromecánica enfocado en automatización industrial:
-PLC Siemens, HMI y programación bajo IEC 61131-3.
-
-📍 Cundinamarca, Colombia · [LinkedIn](tu-enlace) · tucorreo@ejemplo.com
-
----
-
-## Competencias técnicas
-
-| Área | Herramientas |
+## Arquitectura
+| Elemento | Detalle |
 |---|---|
-| Programación PLC | TIA Portal (STEP 7 Professional), CODESYS |
-| Lenguajes | KOP/Ladder, SCL / Texto Estructurado, GRAFCET |
-| HMI | WinCC Basic |
-| Simulación | PLCSIM, Factory I/O |
-| Comunicaciones | PROFINET, Modbus TCP |
+| CPU | S7-1200 CPU 1214C DC/DC/DC |
+| HMI | KTP700 Basic |
+| Software | TIA Portal V20 + PLCSIM |
 
----
+## Lista de entradas y salidas
+| Dirección | Tag | Descripción | Tipo |
+|---|---|---|---|
+| I0.0 | S_Marcha | Pulsador de marcha | Bool |
+| Q0.0 | K_Banda | Contactor banda transportadora | Bool |
 
-## Proyectos
+## Estructura del programa
+- `OB1` — llamada cíclica
+- `FB_Secuencia` — máquina de estados del ciclo
+- `FC_Alarmas` — gestión y enclavamiento de alarmas
+- `DB_Parametros` — tiempos y consignas
 
-### 1. [Sistema de envasado automatizado](./01-envasado)
+## Decisiones de diseño
+[Por qué máquina de estados y no lógica secuencial. Por qué un FB con instancia
+y no un FC. Cómo resolviste el paso de manual a automático sin arranques
+inesperados.]
 
-Control de una línea de llenado con secuencia automática, modo manual,
-gestión de alarmas y HMI de operación con sinóptico animado.
+## Video
+[Enlace a YouTube]
 
-**Stack:** S7-1200 · TIA Portal V20 · WinCC Basic · PLCSIM
-
-[▶ Ver video](enlace-youtube) · [Documentación completa](./01-envasado/README.md)
-
-![Vista del HMI](./01-envasado/media/hmi.png)
