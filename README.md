@@ -38,6 +38,12 @@ mantenimiento predictivo del conjunto motor-bomba.
 
 **Stack:** S7-1500 · TIA Portal V20 · WinCC Basic · PLCSIM · Modbus TCP
 
+**Arquitectura de señales:** 7 entradas digitales · 3 salidas digitales ·
+3 entradas analógicas · 1 salida analógica. En fase 2, las señales del variador
+migran a comunicación.
+
+![P&ID del sistema de bombeo](01-bombeo/documentacion/pid.png)
+
 ### Alcance
 
 - Secuencia de arranque con enclavamientos y tiempo mínimo entre arranques
@@ -53,7 +59,7 @@ mantenimiento predictivo del conjunto motor-bomba.
 
 ```mermaid
 stateDiagram-v2
-
+    [*] --> S0
     S0: 0 · REPOSO
     S1: 1 · ESPERA_REARRANQUE
     S2: 2 · ARRANCANDO
@@ -77,10 +83,6 @@ stateDiagram-v2
 Los enclavamientos actúan desde cualquier estado operativo y conducen al estado
 FALLA con parada inmediata, a diferencia de la parada ordenada por el operador,
 que ejecuta rampa descendente.
-
-- [P&ID del sistema de bombeo]![P&ID del sistema de bombeo](01-bombeo/documentacion/pid.png)
-- [Descripción funcional](01-bombeo/documentacion/descripcion-funcional.md)
-
 
 ### Decisiones de diseño
 
@@ -120,6 +122,9 @@ volver a automático, el PID se inicializa con la velocidad actual. Sin esta
 inicialización cruzada, el cambio de modo produciría un escalón en la velocidad
 del motor.
 
+### Documentación
+
+- [Descripción funcional](01-bombeo/documentacion/descripcion-funcional.md)
 
 ### Estado del proyecto
 
