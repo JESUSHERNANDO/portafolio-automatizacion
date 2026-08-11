@@ -59,7 +59,7 @@ migran a comunicación.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> S0
+    
     S0: 0 · REPOSO
     S1: 1 · ESPERA_REARRANQUE
     S2: 2 · ARRANCANDO
