@@ -78,6 +78,10 @@ Los enclavamientos actúan desde cualquier estado operativo y conducen al estado
 FALLA con parada inmediata, a diferencia de la parada ordenada por el operador,
 que ejecuta rampa descendente.
 
+- [P&ID del sistema de bombeo]![P&ID del sistema de bombeo](01-bombeo/documentacion/pid.png)
+- [Descripción funcional](01-bombeo/documentacion/descripcion-funcional.md)
+
+
 ### Decisiones de diseño
 
 **Tiempo mínimo entre arranques de 60 s, no 300 s.**
@@ -116,11 +120,6 @@ volver a automático, el PID se inicializa con la velocidad actual. Sin esta
 inicialización cruzada, el cambio de modo produciría un escalón en la velocidad
 del motor.
 
-### Documentación
-
-- [Descripción funcional](01-bombeo/documentacion/descripcion-funcional.md)
-- [Diagrama P&ID](01-bombeo/documentacion/pid.png)
-- [Máquina de estados](01-bombeo/documentacion/maquina-estados.png)
 
 ### Estado del proyecto
 
