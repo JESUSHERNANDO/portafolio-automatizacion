@@ -119,7 +119,7 @@ del motor.
 ### Documentación
 
 - [Descripción funcional](01-bombeo/documentacion/descripcion-funcional.md)
-- [Diagrama P&ID]![Diagrama P&ID del sistema de bombeo](01-bombeo/documentacion/pid.png)
+- [Diagrama P&ID](01-bombeo/documentacion/pid.png)
 - [Máquina de estados](01-bombeo/documentacion/maquina-estados.png)
 
 ### Estado del proyecto
