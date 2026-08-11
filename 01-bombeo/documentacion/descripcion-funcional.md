@@ -17,9 +17,8 @@ Del 10 de agosto al 4 de octubre de 2026
 - [x] CODESYS instalado
 
 **Pendiente antes del lunes**
-- [ ] Descargar TIA Portal (STEP 7 **Professional** + WinCC + PLCSIM) — **V20 y V21**, ambas versiones
-- [ ] Guardar los archivos sin ejecutar el instalador
-- [ ] Escribir al laboratorio de la universidad pidiendo licencia SCE
+- [x] Descargar TIA Portal (STEP 7 **Professional** + WinCC + PLCSIM) — **V20 y V21**, ambas versiones
+- [x] Guardar los archivos sin ejecutar el instalador
 
 ---
 
@@ -77,21 +76,21 @@ El calendario es negociable. Estos no.
 ### Semana 1 · 10–16 de agosto · 10 horas
 *Sin reloj de licencia corriendo*
 
-- [ ] Decidir el proceso y escribir su descripción funcional en una página
-- [ ] Dibujar el P&ID simplificado a mano: tanque, bomba, sensores, actuadores
-- [ ] Lista preliminar de entradas y salidas
-- [ ] CODESYS: primer bloque de lógica corriendo en simulación
-- [ ] Repasar estructura IEC 61131-3: diferencia entre programa, función y bloque de función
-- [ ] SITRAIN: módulo de arrancadores y protección de motores (1 h)
+- [x] Decidir el proceso y escribir su descripción funcional en una página
+- [x] Dibujar el P&ID simplificado a mano: tanque, bomba, sensores, actuadores
+- [x] Lista preliminar de entradas y salidas
+- [x] CODESYS: primer bloque de lógica corriendo en simulación
+- [x] Repasar estructura IEC 61131-3: diferencia entre programa, función y bloque de función
+- [x] SITRAIN: módulo de arrancadores y protección de motores (1 h)
 
 **Entregable:** descripción funcional y lista de E/S subidas al repositorio.
 
 ### Semana 2 · 17–23 de agosto · 11 horas
 *Sin reloj de licencia corriendo*
 
-- [ ] Máquina de estados del proceso en papel: estados, transiciones, condiciones
+- [x] Máquina de estados del proceso en papel: estados, transiciones, condiciones
 - [ ] Implementar la secuencia completa en CODESYS
-- [ ] Practicar texto estructurado (ST) — es el equivalente al SCL de Siemens
+- [x] Practicar texto estructurado (ST) — es el equivalente al SCL de Siemens
 - [ ] Verificar requisitos del equipo y espacio en disco
 - [ ] SITRAIN: módulo de SINAMICS, principios de variador (1 h)
 
