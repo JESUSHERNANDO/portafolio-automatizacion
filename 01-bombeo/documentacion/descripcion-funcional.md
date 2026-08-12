@@ -3,7 +3,7 @@
 
 **Proyecto:** Portafolio de automatización industrial
 **Autor:** Jesús Hernando Pérez Maldonado
-**Revisión:** 2 — agosto 2026
+**Revisión:** 12 — agosto 2026
 **Controlador:** SIMATIC S7-1500 · TIA Portal · WinCC Basic
 
 ### Control de revisiones
