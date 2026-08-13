@@ -44,6 +44,46 @@ migran a comunicación.
 
 ![P&ID del sistema de bombeo](01-bombeo/documentacion/pid.png)
 
+### Arquitectura de control
+
+```mermaid
+flowchart TB
+    HMI["HMI KTP700 · WinCC Basic<br/>Sinóptico · alarmas · tendencias"]
+
+    subgraph PLC["Controlador S7-1500"]
+        FSM["Máquina de estados<br/>Secuencia · enclavamientos · diagnóstico"]
+        PID["Regulador PID<br/>Control de nivel"]
+        MON["Monitoreo de condición<br/>Horas · arranques · degradación"]
+    end
+
+    subgraph VFD["Variador SINAMICS G120"]
+        RAMP["Rampas de aceleración<br/>y desaceleración"]
+        PROT["Protecciones del motor"]
+    end
+
+    MOT["M-01 → P-01"]
+    LT["LT-01 · nivel TK-02"]
+    LSL["LSL-01 · nivel bajo cisterna"]
+    FT["FT-01 · caudal de descarga"]
+
+    HMI <--> FSM
+    FSM <==>|"consigna · rampa · estado · corriente"| RAMP
+    RAMP -->|"3~"| MOT
+    LT --> PID
+    LSL --> FSM
+    FT --> MON
+```
+
+El reparto de responsabilidades es deliberado. El controlador decide **qué** debe
+ocurrir —la secuencia, los enclavamientos y la consigna de nivel— y el variador
+resuelve **cómo** ejecutarlo, con sus propias rampas y protecciones de motor.
+
+Esa frontera evita duplicar en software funciones que el hardware ya realiza con
+mejor resolución, y mantiene activas las protecciones del accionamiento aunque el
+controlador falle. El enlace de comunicación es bidireccional: el controlador
+parametriza el variador y a la vez lee de él las variables que alimentan el
+monitoreo de condición.
+
 ### Alcance
 
 - Secuencia de arranque con enclavamientos y tiempo mínimo entre arranques
