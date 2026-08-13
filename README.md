@@ -84,6 +84,50 @@ Los enclavamientos actúan desde cualquier estado operativo y conducen al estado
 FALLA con parada inmediata, a diferencia de la parada ordenada por el operador,
 que ejecuta rampa descendente.
 
+### Máquina de estados
+
+```mermaid
+stateDiagram-v2
+    [*] --> S0
+    S0: 0 · REPOSO
+    S1: 1 · ESPERA_REARRANQUE
+    S2: 2 · ARRANCANDO
+    S4: 4 · REGULANDO
+    S5: 5 · MANUAL
+    S6: 6 · PARANDO
+    S9: 9 · FALLA
+
+    S0 --> S1: flanco de marcha ∧ permisivos OK
+    S1 --> S0: orden de parada o cancelación
+    S1 --> S2: temporizador de rearranque cumplido
+    S2 --> S4: confirmación de marcha ∧ vel ≥ 30%
+    S4 --> S5: selector a manual
+    S5 --> S4: selector a automático
+    S4 --> S6: orden de parada del operador
+    S5 --> S6: orden de parada del operador
+    S6 --> S0: velocidad ≤ velocidad de parada
+
+    S2 --> S9: AL-05 · sin confirmación en 5 s
+    S2 --> S9: AL-09 · no alcanza velocidad en 15 s
+    S6 --> S9: AL-10 · parada no completada en 30 s
+    S9 --> S0: flanco de reset ∧ sin enclavamientos
+
+    note right of S9
+        Los enclavamientos actúan desde
+        cualquier estado operativo y
+        conducen a FALLA con parada
+        inmediata, sin rampa.
+    end note
+```
+
+Las órdenes que activan el sistema —marcha y reconocimiento— se evalúan por
+flanco de subida; las que detienen —parada y enclavamientos— por nivel. Una
+orden de marcha evaluada por nivel provocaría el rearranque automático del
+equipo tras un reconocimiento.
+
+El estado FALLA registra la **primera** causa detectada y la conserva hasta el
+reconocimiento. En una parada en cascada, eso apunta al origen en lugar de a la
+consecuencia.
 ### Decisiones de diseño
 
 **Tiempo mínimo entre arranques de 60 s, no 300 s.**
