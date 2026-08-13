@@ -59,35 +59,6 @@ migran a comunicación.
 
 ```mermaid
 stateDiagram-v2
-    
-    S0: 0 · REPOSO
-    S1: 1 · ESPERA_REARRANQUE
-    S2: 2 · ARRANCANDO
-    S4: 4 · REGULANDO
-    S5: 5 · MANUAL
-    S6: 6 · PARANDO
-    S9: 9 · FALLA
-
-    S0 --> S1: marcha ∧ permisivos OK
-    S1 --> S0: parada o cancelación
-    S1 --> S2: temporizador cumplido
-    S2 --> S4: confirmación ∧ vel ≥ 30%
-    S4 --> S5: selector a manual
-    S5 --> S4: selector a automático
-    S4 --> S6: orden de parada
-    S5 --> S6: orden de parada
-    S6 --> S0: rampa descendente completa
-    S9 --> S0: reset ∧ sin enclavamientos
-```
-
-Los enclavamientos actúan desde cualquier estado operativo y conducen al estado
-FALLA con parada inmediata, a diferencia de la parada ordenada por el operador,
-que ejecuta rampa descendente.
-
-### Máquina de estados
-
-```mermaid
-stateDiagram-v2
     [*] --> S0
     S0: 0 · REPOSO
     S1: 1 · ESPERA_REARRANQUE
