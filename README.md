@@ -198,7 +198,8 @@ del motor.
 ### Trabajo pendiente
 
 - Migración de las señales del variador de cableado a comunicación
-
+- Regulación PID y sintonía del lazo
+- Palabra de alarmas para la lista del HMI
 ---
 
 ## Estructura del repositorio
