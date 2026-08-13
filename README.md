@@ -188,6 +188,7 @@ del motor.
 - [x] Lista de entradas y salidas
 - [x] Máquina de estados
 - [x] Prototipo de lógica en CODESYS
+- [x] Enclavamientos y diagnóstico diferenciado de fallas
 - [ ] Implementación en TIA Portal
 - [ ] HMI en WinCC
 - [ ] Regulación PID
