@@ -141,8 +141,6 @@ del motor.
 
 ### Trabajo pendiente
 
-- Transiciones al estado FALLA desde los enclavamientos, a definir junto con la
-  revisión de la tabla de alarmas
 - Migración de las señales del variador de cableado a comunicación
 
 ---
