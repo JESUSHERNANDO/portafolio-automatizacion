@@ -13,14 +13,13 @@ en el diseño de sistemas de monitoreo para mantenimiento predictivo.
 
 ## Competencias técnicas
 
-| Área | Herramientas |
+| Área | Herramientas y conocimientos |
 |---|---|
-| Programación PLC | TIA Portal (STEP 7 Professional), CODESYS |
-| Lenguajes | KOP/Ladder, SCL / Texto Estructurado, GRAFCET |
-| HMI | WinCC Basic |
-| Simulación | PLCSIM, Factory I/O |
-| Comunicaciones | PROFINET, Modbus TCP |
-| Monitoreo de condición | Adquisición de variables, históricos y tendencias |
+| Programación PLC | CODESYS · TIA Portal (STEP 7 Professional) |
+| Lenguajes | Texto estructurado (ST/SCL) · KOP/Ladder |
+| Diseño de control | Máquinas de estado · enclavamientos · diagnóstico de fallas |
+| Simulación | CODESYS Control Win · PLCSIM |
+| Documentación técnica | Descripción funcional · P&ID · listas de E/S |
 
 ---
 
